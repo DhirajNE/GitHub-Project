@@ -5,37 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design Fundamentals Portfolio</title>
     <style>
-        /* General reset and basic styling */
+        /* Basic reset - thanks to CSS tricks for this tip! */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Main styles - keeping it clean and readable */
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif;  /* Arial works well for portfolios */
             line-height: 1.6;
             color: #333;
-            max-width: 1200px;
+            max-width: 1200px;  /* stops content from getting too wide */
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* Header section */
+        /* Header stuff */
         header {
             padding: 2rem 0;
             text-align: center;
         }
 
+        /* Navigation menu */
         nav {
             background-color: #f4f4f4;
             padding: 1rem;
             margin-bottom: 2rem;
+            /* adding subtle depth */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         nav ul {
             list-style: none;
-            display: flex;
+            display: flex;  /* flexbox for the win! */
             justify-content: center;
             gap: 2rem;
         }
@@ -44,29 +48,36 @@
             text-decoration: none;
             color: #333;
             font-weight: bold;
+            /* smooth transition for hover */
+            transition: color 0.2s ease;
         }
 
         nav a:hover {
             color: #666;
         }
 
-        /* Project card styles */
+        /* Project card design */
         .project-card {
             background: #fff;
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 2rem;
+            /* nice shadow effect */
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
 
         .project-content {
             margin-bottom: 1.5rem;
         }
 
+        /* Reflection sections */
         .reflection {
             background: #f9f9f9;
             padding: 1.5rem;
             border-radius: 5px;
+            /* subtle border */
+            border: 1px solid #eee;
         }
 
         .key-points {
@@ -78,7 +89,7 @@
             margin-left: 1.5rem;
         }
 
-        /* Modal styles */
+        /* Modal styling - learned this from a YouTube tutorial */
         .modal {
             display: none;
             position: fixed;
@@ -110,12 +121,14 @@
             font-weight: bold;
             color: #333;
             cursor: pointer;
+            transition: color 0.2s ease;
         }
 
         .close-button:hover {
             color: #666;
         }
 
+        /* Animation for modal - makes it look smooth */
         .modal.fade-in {
             display: block;
             animation: fadeIn 0.3s ease-in;
@@ -126,15 +139,30 @@
             to { opacity: 1; }
         }
 
+        /* Footer design */
         footer {
             text-align: center;
             padding: 2rem 0;
             margin-top: 2rem;
             border-top: 1px solid #ddd;
         }
+
+        /* Making it look good on phones too */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Header section -->
     <header>
         <h1>Welcome to My Design Fundamentals Portfolio</h1>
         <nav>
@@ -148,6 +176,7 @@
     </header>
 
     <main>
+        <!-- HTML Project -->
         <section id="html-project" class="project-card">
             <h2>HTML/GitHub Project</h2>
             <div class="project-content">
@@ -168,6 +197,7 @@
             </div>
         </section>
 
+        <!-- CARP Project -->
         <section id="carp-project" class="project-card">
             <h2>CARP Project</h2>
             <div class="project-content">
@@ -188,6 +218,7 @@
             </div>
         </section>
 
+        <!-- Typography Project -->
         <section id="typography-project" class="project-card">
             <h2>Typography Project</h2>
             <div class="project-content">
@@ -208,32 +239,21 @@
             </div>
         </section>
     
+        <!-- Reflection Essay -->
         <section id="reflection" class="project-card">
             <h2>Reflective Essay</h2>
             <div class="project-content">
-                <p>Over the Design Fundamentals course this semester, I have had a transforming experience learning and using web and graphic design concepts. Over the three primary projects—HTML/GitHub, CARP, and Typography—this reflection article investigates my development and learning experience.
-</P>
-<p>
-The HTML/GitHub project started my path and exposed me to the technical underpinnings of web development. As Ryou and Ryu (2018) highlight, modern web development depends on a knowledge of semantic HTML5 elements. Though first I found version control ideas difficult, as Constantino et al. (2020) emphasise, actual application helped me to value how Git processes enable group development. This project helped me to realise that, just as much as visual design is crucial, clean, orderly code is.
-</p>
-<P>
-The CARP project fundamentally changed the way I saw design concepts. Williams' 2015 Contrast, Alignment, Repetition, and Proximity paradigm gave me a methodical approach to visual design. I found that these ideas are useful tools rather than only abstract ideas that may turn everyday layouts into striking visual experiences. The most important lesson was realising how these components interact cooperatively; for example, how good alignment supports proximity groups and how regulated repetition could improve rather than weaken contrast.
-</P>
-<P>
-Originally underappreciated, typeography turned out to be essential component of web design. Bringhurst's 2004 observations on typeographic principles let me see the subtle but significant influence of font selection and spacing. Experimentation helped me to discover that typeography is about generating mood, establishing hierarchy, and improving user experience rather than only readability. From overall font matching techniques to the smallest letter spacing, this project forced me to consider design at both macro and micro levels.
-</P>
-<P>
-Developing an integrated knowledge of how technical abilities and design concepts complement each other has been among the most important results of this course. HTML structure, CARP ideas, and typeographic expertise taken together have let me approach web design holistically. Good web design is about developing useful, easily navigable, aesthetically pleasant experiences that meet user needs, not only about how things look.
-</P>
-<P>
-Looking forward, I see places for more development. I wish to investigate more complex CSS techniques and responsive design patterns even though I have confidence in applying design ideas. Since these are so important for producing really inclusive web experiences, I also want to learn more about user experience design and accessibility criteria.
-Equipped with both technical abilities and design ideas, this course has set a strong basis for my career in web design. Above all, it has shown me that design is an ongoing learning, trying, and refining process that keeps on outside the classroom.
-</p>
+                <p>Over the Design Fundamentals course this semester, I have had a transforming experience learning and using web and graphic design concepts. Over the three primary projects—HTML/GitHub, CARP, and Typography—this reflection article investigates my development and learning experience.</p>
+                <p>The HTML/GitHub project started my path and exposed me to the technical underpinnings of web development. As Ryou and Ryu (2018) highlight, modern web development depends on a knowledge of semantic HTML5 elements. Though first I found version control ideas difficult, as Constantino et al. (2020) emphasise, actual application helped me to value how Git processes enable group development. This project helped me to realise that, just as much as visual design is crucial, clean, orderly code is.</p>
+                <p>The CARP project fundamentally changed the way I saw design concepts. Williams' 2015 Contrast, Alignment, Repetition, and Proximity paradigm gave me a methodical approach to visual design. I found that these ideas are useful tools rather than only abstract ideas that may turn everyday layouts into striking visual experiences. The most important lesson was realising how these components interact cooperatively; for example, how good alignment supports proximity groups and how regulated repetition could improve rather than weaken contrast.</p>
+                <p>Originally underappreciated, typeography turned out to be essential component of web design. Bringhurst's 2004 observations on typeographic principles let me see the subtle but significant influence of font selection and spacing. Experimentation helped me to discover that typeography is about generating mood, establishing hierarchy, and improving user experience rather than only readability. From overall font matching techniques to the smallest letter spacing, this project forced me to consider design at both macro and micro levels.</p>
+                <p>Developing an integrated knowledge of how technical abilities and design concepts complement each other has been among the most important results of this course. HTML structure, CARP ideas, and typeographic expertise taken together have let me approach web design holistically. Good web design is about developing useful, easily navigable, aesthetically pleasant experiences that meet user needs, not only about how things look.</p>
+                <p>Looking forward, I see places for more development. I wish to investigate more complex CSS techniques and responsive design patterns even though I have confidence in applying design ideas. Since these are so important for producing really inclusive web experiences, I also want to learn more about user experience design and accessibility criteria. Equipped with both technical abilities and design ideas, this course has set a strong basis for my career in web design. Above all, it has shown me that design is an ongoing learning, trying, and refining process that keeps on outside the classroom.</p>
             </div>
         </section>
     </main>
 
-    <!-- Modal containers -->
+    <!-- Modals for each project -->
     <div id="htmlProjectModal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
@@ -298,41 +318,24 @@ Equipped with both technical abilities and design ideas, this course has set a s
         <p>&copy; 2024 Designed by Dhiraj | Built with passion.</p>
     </footer>
 
+    <!-- JavaScript for interactivity -->
     <script>
+        // Grab all the elements we need
         const modals = document.querySelectorAll('.modal');
         const closeButtons = document.querySelectorAll('.close-button');
 
+        // Function to open modals
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             modal.classList.add('fade-in');
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';  // Stop background scrolling
         }
 
+        // Function to close modals
         function closeModal(modal) {
             modal.classList.remove('fade-in');
             modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = 'auto';  // Allow scrolling again
         }
 
-        closeButtons.forEach(button => {
-            button.onclick = function() {
-                const modal = button.closest('.modal');
-                closeModal(modal);
-            }
-        });
-
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                closeModal(event.target);
-            }
-        }
-
-        document.querySelectorAll('.reflection h3').forEach(heading => {
-            heading.onclick = function() {
-                const projectId = this.closest('section').id;
-                openModal(projectId + 'Modal');
-            }
-        });
-    </script>
-</body>
-</html>
+        // Set up close button
