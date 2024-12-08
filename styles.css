@@ -1,0 +1,20 @@
+/* Additional styles for show/hide functionality */
+.project-content {
+    display: none; /* Hidden by default */
+}
+
+.project-content.visible {
+    display: block;
+}
+
+/* Style for reflection button */
+#reflection-button {
+    cursor: pointer;
+    color: #0066cc;
+    border: none;
+    background: none;
+    padding: 0;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
