@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design Fundamentals Portfolio</title>
     <style>
-        /* General reset for clean slate */
+        /* General reset and basic styling */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Basic styling */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -51,49 +50,87 @@
             color: #666;
         }
 
-        /* Main content layout */
-        main {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem 0;
-        }
-
+        /* Project card styles */
         .project-card {
             background: #fff;
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 1.5rem;
-            transition: transform 0.2s;
+            margin-bottom: 2rem;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
+        .project-content {
+            margin-bottom: 1.5rem;
         }
 
-        .project-card h2 {
-            margin-bottom: 1rem;
+        .reflection {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 5px;
         }
 
-        /* Footer section */
+        .key-points {
+            margin: 1rem 0;
+        }
+
+        .key-points ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 8px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-button {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .close-button:hover {
+            color: #666;
+        }
+
+        .modal.fade-in {
+            display: block;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         footer {
             text-align: center;
             padding: 2rem 0;
             margin-top: 2rem;
             border-top: 1px solid #ddd;
-        }
-
-        /* Mobile-friendly tweaks */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            main {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -114,39 +151,188 @@
         <section id="html-project" class="project-card">
             <h2>HTML/GitHub Project</h2>
             <div class="project-content">
-                <!-- Your HTML project details go here -->
+                <p>By means of this HTML and GitHub project, I acquired useful knowledge in contemporary web development techniques and version control systems. Building a responsive website from scratch improved my knowledge of semantic HTML5 elements and CSS Grid layouts, thereby matching with Ryou and Ryu (2018) ideas of usability. Working with GitHub helped me to better understand collaborative development techniques, especially the relevance of commit messages and branching strategies as stressed by Constantino et al. (2020).</p>
+                
+                <div class="key-points">
+                    <h3>Key learnings:</h3>
+                    <ul>
+                        <li>Implemented responsive design principles using CSS Grid and Flexbox</li>
+                        <li>Mastered basic Git workflows including commits, branches, and merges</li>
+                        <li>Applied semantic HTML5 elements for better accessibility and SEO</li>
+                        <li>Learned the importance of mobile-first design approaches</li>
+                    </ul>
+                </div>
             </div>
             <div class="reflection">
-                <h3>What I Learned</h3>
-                <!-- Share your thoughts or lessons from this project -->
+                <h3 style="cursor: pointer; color: #0066cc;">What I Learned</h3>
             </div>
         </section>
 
         <section id="carp-project" class="project-card">
             <h2>CARP Project</h2>
             <div class="project-content">
-                <!-- Include content about your CARP project -->
+                <p>The CARP project helped me to grasp basic design ideas more deeply. Inspired by Williams' (2015) ideas from "The Non-Designer's Design Book," I investigated how these four components interact to produce cohesive layouts and successful visual hierarchies.</p>
+                
+                <div class="key-points">
+                    <h3>Key insights:</h3>
+                    <ul>
+                        <li>Utilized contrast to establish clear visual hierarchies</li>
+                        <li>Applied alignment principles for professional presentation</li>
+                        <li>Implemented repetition to create visual consistency</li>
+                        <li>Leveraged proximity to organize related elements effectively</li>
+                    </ul>
+                </div>
             </div>
             <div class="reflection">
-                <h3>What I Learned</h3>
-                <!-- Share your insights or challenges -->
+                <h3 style="cursor: pointer; color: #0066cc;">What I Learned</h3>
             </div>
         </section>
 
         <section id="typography-project" class="project-card">
             <h2>Typography Project</h2>
             <div class="project-content">
-                <!-- Add details of your Typography project -->
+                <p>This project increased my respect of typeography as a fundamental component of web design. Inspired by Bringhurst's (2004) ideas of typographic brilliance, I tried several typefaces, spacing, and hierarchies to produce readable and visually appealing layouts. The project clarified for me how typeface shapes brand impression and user experience.</p>
+                
+                <div class="key-points">
+                    <h3>Key discoveries:</h3>
+                    <ul>
+                        <li>Explored the relationship between typeface choices and content tone</li>
+                        <li>Learned proper spacing techniques for optimal readability</li>
+                        <li>Practiced creating effective typographic hierarchies</li>
+                        <li>Understanding the importance of responsive typography</li>
+                    </ul>
+                </div>
             </div>
             <div class="reflection">
-                <h3>What I Learned</h3>
-                <!-- Add your reflection here -->
+                <h3 style="cursor: pointer; color: #0066cc;">What I Learned</h3>
+            </div>
+        </section>
+    
+        <section id="reflection" class="project-card">
+            <h2>Reflective Essay</h2>
+            <div class="project-content">
+                <p>Over the Design Fundamentals course this semester, I have had a transforming experience learning and using web and graphic design concepts. Over the three primary projects—HTML/GitHub, CARP, and Typography—this reflection article investigates my development and learning experience.
+</P>
+<p>
+The HTML/GitHub project started my path and exposed me to the technical underpinnings of web development. As Ryou and Ryu (2018) highlight, modern web development depends on a knowledge of semantic HTML5 elements. Though first I found version control ideas difficult, as Constantino et al. (2020) emphasise, actual application helped me to value how Git processes enable group development. This project helped me to realise that, just as much as visual design is crucial, clean, orderly code is.
+</p>
+<P>
+The CARP project fundamentally changed the way I saw design concepts. Williams' 2015 Contrast, Alignment, Repetition, and Proximity paradigm gave me a methodical approach to visual design. I found that these ideas are useful tools rather than only abstract ideas that may turn everyday layouts into striking visual experiences. The most important lesson was realising how these components interact cooperatively; for example, how good alignment supports proximity groups and how regulated repetition could improve rather than weaken contrast.
+</P>
+<P>
+Originally underappreciated, typeography turned out to be essential component of web design. Bringhurst's 2004 observations on typeographic principles let me see the subtle but significant influence of font selection and spacing. Experimentation helped me to discover that typeography is about generating mood, establishing hierarchy, and improving user experience rather than only readability. From overall font matching techniques to the smallest letter spacing, this project forced me to consider design at both macro and micro levels.
+</P>
+<P>
+Developing an integrated knowledge of how technical abilities and design concepts complement each other has been among the most important results of this course. HTML structure, CARP ideas, and typeographic expertise taken together have let me approach web design holistically. Good web design is about developing useful, easily navigable, aesthetically pleasant experiences that meet user needs, not only about how things look.
+</P>
+<P>
+Looking forward, I see places for more development. I wish to investigate more complex CSS techniques and responsive design patterns even though I have confidence in applying design ideas. Since these are so important for producing really inclusive web experiences, I also want to learn more about user experience design and accessibility criteria.
+Equipped with both technical abilities and design ideas, this course has set a strong basis for my career in web design. Above all, it has shown me that design is an ongoing learning, trying, and refining process that keeps on outside the classroom.
+</p>
             </div>
         </section>
     </main>
 
+    <!-- Modal containers -->
+    <div id="htmlProjectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>HTML/GitHub Project Reflection</h2>
+            <div class="modal-body">
+                <p>By means of this HTML and GitHub project, I acquired useful knowledge in contemporary web development techniques and version control systems. Building a responsive website from scratch improved my knowledge of semantic HTML5 elements and CSS Grid layouts, thereby matching with Ryou and Ryu (2018) ideas of usability. Working with GitHub helped me to better understand collaborative development techniques, especially the relevance of commit messages and branching strategies as stressed by Constantino et al. (2020).</p>
+                
+                <div class="key-points">
+                    <h3>Key learnings:</h3>
+                    <ul>
+                        <li>Implemented responsive design principles using CSS Grid and Flexbox</li>
+                        <li>Mastered basic Git workflows including commits, branches, and merges</li>
+                        <li>Applied semantic HTML5 elements for better accessibility and SEO</li>
+                        <li>Learned the importance of mobile-first design approaches</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="carpProjectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>CARP Project Reflection</h2>
+            <div class="modal-body">
+                <p>The CARP project helped me to grasp basic design ideas more deeply. Inspired by Williams' (2015) ideas from "The Non-Designer's Design Book," I investigated how these four components interact to produce cohesive layouts and successful visual hierarchies.</p>
+                
+                <div class="key-points">
+                    <h3>Key insights:</h3>
+                    <ul>
+                        <li>Utilized contrast to establish clear visual hierarchies</li>
+                        <li>Applied alignment principles for professional presentation</li>
+                        <li>Implemented repetition to create visual consistency</li>
+                        <li>Leveraged proximity to organize related elements effectively</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="typographyProjectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Typography Project Reflection</h2>
+            <div class="modal-body">
+                <p>This project increased my respect of typeography as a fundamental component of web design. Inspired by Bringhurst's (2004) ideas of typographic brilliance, I tried several typefaces, spacing, and hierarchies to produce readable and visually appealing layouts. The project clarified for me how typeface shapes brand impression and user experience.</p>
+                
+                <div class="key-points">
+                    <h3>Key discoveries:</h3>
+                    <ul>
+                        <li>Explored the relationship between typeface choices and content tone</li>
+                        <li>Learned proper spacing techniques for optimal readability</li>
+                        <li>Practiced creating effective typographic hierarchies</li>
+                        <li>Understanding the importance of responsive typography</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2024 Design Fundamentals Portfolio | Built with passion.</p>
+        <p>&copy; 2024 Designed by Dhiraj | Built with passion.</p>
     </footer>
+
+    <script>
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.close-button');
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('fade-in');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modal) {
+            modal.classList.remove('fade-in');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        closeButtons.forEach(button => {
+            button.onclick = function() {
+                const modal = button.closest('.modal');
+                closeModal(modal);
+            }
+        });
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal(event.target);
+            }
+        }
+
+        document.querySelectorAll('.reflection h3').forEach(heading => {
+            heading.onclick = function() {
+                const projectId = this.closest('section').id;
+                openModal(projectId + 'Modal');
+            }
+        });
+    </script>
 </body>
 </html>
