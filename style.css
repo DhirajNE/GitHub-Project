@@ -1,0 +1,49 @@
+.section {
+  margin-bottom: 2rem;
+}
+
+.project-card {
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.project-content {
+  display: none; /* Hidden by default */
+}
+
+.project-content.visible {
+  display: block;
+}
+
+.key-points {
+  background: #f5f5f5;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+
+.reflection {
+  cursor: pointer;
+  color: #0066cc;
+}
+
+/* Style for the "What I Learned" buttons */
+.reflection h3 {
+  cursor: pointer;
+  color: #0066cc;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* Style for the "Show More" button */
+.show-more-btn {
+  cursor: pointer;
+  color: #0066cc;
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  margin-bottom: 1rem;
+  text-decoration: underline;
+}
