@@ -320,7 +320,7 @@
 
     <!-- JavaScript for interactivity -->
     <script>
-        // Grab all the elements we need
+        // Get all modals and close buttons
         const modals = document.querySelectorAll('.modal');
         const closeButtons = document.querySelectorAll('.close-button');
 
@@ -328,6 +328,7 @@
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             modal.classList.add('fade-in');
+            modal.style.display = 'block';  // Make sure modal is visible
             document.body.style.overflow = 'hidden';  // Stop background scrolling
         }
 
@@ -338,4 +339,26 @@
             document.body.style.overflow = 'auto';  // Allow scrolling again
         }
 
-        // Set up close button
+        // Set up close button functionality
+        closeButtons.forEach(button => {
+            button.onclick = function() {
+                const modal = button.closest('.modal');
+                closeModal(modal);
+            }
+        });
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal(event.target);
+            }
+        }
+
+        // Set up "What I Learned" button clicks
+        document.querySelectorAll('.reflection h3').forEach(heading => {
+            heading.onclick = function() {
+                const sectionId = this.closest('section').id;
+                const modalId = sectionId + 'Modal';
+                openModal(modalId);
+            }
+        });
